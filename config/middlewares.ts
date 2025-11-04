@@ -5,7 +5,7 @@ export default [
   {
     name: "strapi::cors",
     config: {
-      origin: ["http://localhost:3000", 'http://127.0.0.1:3000'],
+      origin: ["http://localhost:3000", 'http://127.0.0.1:3000', 'https://comfy-ashy.vercel.app'],
       credentials: true,
     },
   },

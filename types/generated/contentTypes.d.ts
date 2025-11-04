@@ -1649,6 +1649,7 @@ export interface PluginUsersPermissionsUser
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    developer_balance: Schema.Attribute.Decimal & Schema.Attribute.DefaultTo<0>;
     developer_profile: Schema.Attribute.Relation<
       'oneToOne',
       'api::developer-profile.developer-profile'
