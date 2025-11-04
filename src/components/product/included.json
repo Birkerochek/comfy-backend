@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_product_includeds",
+  "info": {
+    "displayName": "included",
+    "icon": "feather"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "minLength": 2,
+      "maxLength": 500,
+      "required": true
+    }
+  },
+  "config": {}
+}

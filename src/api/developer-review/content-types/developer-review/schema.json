@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "developer_reviews",
+  "info": {
+    "singularName": "developer-review",
+    "pluralName": "developer-reviews",
+    "displayName": "Developer Review"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "developer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "client": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order"
+    },
+    "rating": {
+      "type": "integer",
+      "required": true
+    },
+    "comment": {
+      "type": "text"
+    },
+    "is_verified_purchase": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

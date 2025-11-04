@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "order_item_addons",
+  "info": {
+    "singularName": "order-item-addon",
+    "pluralName": "order-item-addons",
+    "displayName": "Order Item Addon"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "order_item": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order-item.order-item"
+    },
+    "addon": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product-addon.product-addon"
+    },
+    "price_extra": {
+      "type": "decimal",
+      "required": true
+    },
+    "extra_days": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

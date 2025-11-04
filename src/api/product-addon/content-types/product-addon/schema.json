@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product_addons",
+  "info": {
+    "singularName": "product-addon",
+    "pluralName": "product-addons",
+    "displayName": "Product Addon"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "addons"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 255,
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 500
+    },
+    "price_extra": {
+      "type": "decimal",
+      "min": 0
+    },
+    "extra_days": {
+      "type": "integer",
+      "min": 0
+    },
+    "sort_order": {
+      "type": "integer",
+      "default": 0,
+      "min": 0,
+      "max": 9999
+    },
+    "description_full": {
+      "type": "text"
+    }
+  }
+}

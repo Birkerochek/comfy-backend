@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cart_items",
+  "info": {
+    "singularName": "cart-item",
+    "pluralName": "cart-items",
+    "displayName": "Cart Item"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "cart": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cart.cart",
+      "inversedBy": "cart_items"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product"
+    },
+    "quantity": {
+      "type": "integer",
+      "default": 1
+    },
+    "total_price": {
+      "type": "decimal",
+      "default": 0
+    },
+    "product_title": {
+      "type": "string",
+      "required": true
+    },
+    "product_price": {
+      "type": "decimal",
+      "required": true
+    },
+    "selected_addons": {
+      "type": "json"
+    },
+    "addons_total_price": {
+      "type": "decimal",
+      "default": 0
+    },
+    "developer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "platform_commission": {
+      "type": "decimal",
+      "default": 0
+    },
+    "developer_amount": {
+      "type": "decimal",
+      "default": 0
+    }
+  }
+}

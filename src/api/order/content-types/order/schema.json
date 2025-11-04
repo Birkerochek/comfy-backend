@@ -1,0 +1,83 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "client": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "orders"
+    },
+    "order_number": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "total_amount": {
+      "type": "decimal",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "default": "pending_payment",
+      "enum": [
+        "pending_payment",
+        "paid",
+        "in_progress",
+        "awaiting_confirmation",
+        "completed",
+        "cancelled"
+      ]
+    },
+    "client_confirmed": {
+      "type": "boolean",
+      "default": false
+    },
+    "developer_confirmed": {
+      "type": "boolean",
+      "default": false
+    },
+    "items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-item.order-item",
+      "mappedBy": "order"
+    },
+    "product_reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-review.product-review",
+      "mappedBy": "order"
+    },
+    "platform_commission_total": {
+      "type": "decimal",
+      "default": 0
+    },
+    "developers_amount_total": {
+      "type": "decimal",
+      "default": 0
+    },
+    "commission_breakdown": {
+      "type": "json"
+    },
+    "payment_status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "platform_paid",
+        "developers_paid",
+        "all_paid"
+      ],
+      "default": "pending"
+    }
+  }
+}

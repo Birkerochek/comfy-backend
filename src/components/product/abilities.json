@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_product_abilities",
+  "info": {
+    "displayName": "abilities",
+    "icon": "code"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "minLength": 2,
+      "maxLength": 500,
+      "required": true
+    }
+  },
+  "config": {}
+}

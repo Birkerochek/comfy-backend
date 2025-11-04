@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "developer_profiles",
+  "info": {
+    "singularName": "developer-profile",
+    "pluralName": "developer-profiles",
+    "displayName": "Developer Profile"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "developer_profile"
+    },
+    "bio": {
+      "type": "text"
+    },
+    "rating": {
+      "type": "decimal",
+      "default": 0
+    },
+    "total_reviews": {
+      "type": "integer",
+      "default": 0
+    },
+    "total_products": {
+      "type": "integer",
+      "default": 0
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

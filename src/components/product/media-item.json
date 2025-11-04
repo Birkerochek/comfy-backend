@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_product_media_items",
+  "info": {
+    "displayName": "MediaItem",
+    "description": "Картинка или видео для продукта"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "type": {
+      "type": "enumeration",
+      "required": true,
+      "default": "screenshot",
+      "enum": [
+        "screenshot",
+        "thumbnail",
+        "preview"
+      ]
+    },
+    "sort_order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

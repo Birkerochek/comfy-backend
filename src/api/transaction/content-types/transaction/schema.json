@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "singularName": "transaction",
+    "pluralName": "transactions",
+    "displayName": "Transaction"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "timestamps": true
+  },
+  "attributes": {
+    "order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order"
+    },
+    "payment_method": {
+      "type": "enumeration",
+      "enum": [
+        "unknown",
+        "bank_card",
+        "yoo_money",
+        "sbp",
+        "sberbank",
+        "cash"
+      ],
+      "default": "unknown"
+    },
+    "amount": {
+      "type": "decimal",
+      "required": true
+    },
+    "provider_payment_id": {
+      "type": "string",
+      "unique": true
+    },
+    "platform_commission": {
+      "type": "decimal",
+      "default": 0
+    },
+    "developer_amount": {
+      "type": "decimal",
+      "default": 0
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "waiting_for_capture",
+        "succeeded",
+        "canceled",
+        "refunded"
+      ],
+      "default": "pending"
+    },
+    "payment_data": {
+      "type": "json"
+    }
+  }
+}

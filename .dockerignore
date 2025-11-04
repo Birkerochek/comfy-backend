@@ -1,0 +1,13 @@
+.dockerignore
+.editorconfig
+.git
+.gitignore
+.vscode
+Dockerfile
+node_modules
+dist
+build
+.cache
+.tmp
+public/uploads
+*.log

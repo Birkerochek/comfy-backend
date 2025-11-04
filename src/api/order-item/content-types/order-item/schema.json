@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "order_items",
+  "info": {
+    "singularName": "order-item",
+    "pluralName": "order-items",
+    "displayName": "Order Item"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "order": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "items"
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product"
+    },
+    "quantity": {
+      "type": "integer",
+      "default": 1
+    },
+    "price_at_sale": {
+      "type": "decimal",
+      "required": true
+    },
+    "delivery_days_base": {
+      "type": "integer",
+      "required": true
+    },
+    "addons": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-item-addon.order-item-addon",
+      "mappedBy": "order_item"
+    },
+    "product_title": {
+      "type": "string",
+      "required": true
+    },
+    "developer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "platform_commission": {
+      "type": "decimal",
+      "default": 0
+    },
+    "developer_amount": {
+      "type": "decimal",
+      "default": 0
+    },
+    "selected_addons": {
+      "type": "json"
+    },
+    "addons_total_price": {
+      "type": "decimal",
+      "default": 0
+    }
+  }
+}
