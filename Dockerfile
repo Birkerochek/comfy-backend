@@ -17,7 +17,6 @@ ENV PORT=1337
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/build ./build
 COPY config ./config
 COPY public ./public
 COPY package.json package-lock.json ./

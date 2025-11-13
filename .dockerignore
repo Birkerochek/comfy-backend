@@ -3,9 +3,6 @@
 .git
 .gitignore
 .vscode
-Dockerfile
-node_modules
-.cache
 .tmp
 *.log
 config/*.ts
