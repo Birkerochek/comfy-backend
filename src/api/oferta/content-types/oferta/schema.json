@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "ofertas",
+  "info": {
+    "singularName": "oferta",
+    "pluralName": "ofertas",
+    "displayName": "oferta"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

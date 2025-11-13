@@ -19,11 +19,11 @@ export default ({ env }) => ({
       cookieOptions: {
         secure: process.env.NODE_ENV === "production",
         maxAge: 30 * 24 * 60 * 60 * 1000,
-        sameSite: "lax",
-        domain: "127.0.0.1",
+        sameSite: process.env.AUTH_COOKIE_SAME_SITE ?? "lax",
+        domain: process.env.AUTH_COOKIE_DOMAIN ?? "127.0.0.1",
         path: "/",
       },
-      deleteJwtFromResponse: true,
+      deleteJwtFromResponse: false,
     },
   },
  
